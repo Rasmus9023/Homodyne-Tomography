@@ -6,13 +6,13 @@ The formulae used are all found in the paper 'Iterative maximum-likelyhood recon
 
 ## Libraries needed
 
-numpy
-scipy
-qutip
-cmath
-math
-matplotlib.pyplot
-funcs.py (my own file)
+- numpy
+- scipy
+- qutip
+- cmath
+- math
+- matplotlib.pyplot
+- funcs.py (my own file)
 
 ## Files
 
