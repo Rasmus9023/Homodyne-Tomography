@@ -4,9 +4,23 @@ Given representations of a density operator (matrix) it is possible to reconstru
 
 The formulae used are all found in the paper 'Iterative maximum-likelyhood reconstruction in quantum homodyne tomography' by A. I. Lvovsky et. al.
 
+## Libraries needed
+
+numpy
+scipy
+qutip
+cmath
+math
+matplotlib.pyplot
+funcs.py (my own file)
+
 ## Files
 
-The file relevant for this project is 'prob_theta.ipynb' and contains all the relevant code, including functions (I have not used classes for this project). At the end of the project, by help of Jonas, I changed the iterative calculations from matrix multiplication (using matrices created by nested loops) to using einsum which both sped up the calculations and made it much shorter (simpler).
+'prob_theta.ipynb' : This is the file relevant for this project is and contains all the relevant code. At the end of the project, by help of Jonas, I changed the iterative calculations from matrix multiplication (using matrices created by nested loops) to using einsum which both sped up the calculations and made it much shorter (simpler).
+
+'funcs.py' : This file contains all the functions necessary to run main file 'prob_theta.ipynb'
+
+The remaining files are used by myself to test out different lines of codes (either my own or others' code)
 
 ## prob_theta.ipynb
 
@@ -18,6 +32,12 @@ The purpose is to create pseudo-samples for the Likelyhood-function described in
 
 The likelyhood function (eq. 1, Lvovsky), including overlap functions (eq. 8, Lvovsky) is formulated with code. Our pseudo-samples are applied to the function with our density matrix (which we know by fact is correct).
 
-Another file should be created for using the function on different (unknown) density matrices to derive the maximum likelyhood (MaxLik) (once and if I get it to work).
-
 At the end of the file I use an iterative for-loop for the MaxLik-function as this reflects the mathematical formula and is easy to read (for me), but changing this to matrix multiplication will increase the computational speed
+
+## How to use
+
+The first part of the program shows the different representations of the coherent state.
+
+In the next part of the program the user chooses the index of theta in list [0,30,60,90,120,150] that is to be used to generate random samples for the likelyhood function (by default we use index 0).
+
+As different samples are generated for theta != 0 we see that the likelyhood decreases (less likely) using the unrotated density operator. This indicates that the likelyhood function expresses higher values for better correlated density operator <-> sample pairs
